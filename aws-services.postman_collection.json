@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "5206925a-55ce-492b-a1fd-57814eba0f90",
+		"name": "aws-services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32671761"
+	},
+	"item": [
+		{
+			"name": "upload to S3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1efc191c-acbd-4770-a78b-317ba5de1020"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/aws/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aws",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify_email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mahesh.sivngi@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/aws/verify-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aws",
+						"verify-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-of-verified-email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/aws/verified-emails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aws",
+						"verified-emails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"toAddress\": \"mahesh.sivngi@gmail.com\",\r\n  \"subject\": \"Test Email from AWS SES\",\r\n  \"body\": \"Hello, this is a test email from AWS SES!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/aws/send-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"aws",
+						"send-email"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
